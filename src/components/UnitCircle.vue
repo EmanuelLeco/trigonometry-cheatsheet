@@ -19,6 +19,11 @@
 		<line id="sin" x1="250" y1="250" x2="250" :y2="sinLength" />
 		<!-- --------- -->
 
+		<!-- __ TAN __ -->
+		<line x1="350" y1="0" x2="350" y2="500" />
+		<line id="tg" x1="350" y1="250" x2="350" :y2="tgLength" />
+		<!-- --------- -->
+
 		<!-- -- angle line -- -->
 		<line x1="250" y1="250" :x2="endOfLine.x" :y2="endOfLine.y" />
 		<!-- ---------------- -->
@@ -74,6 +79,9 @@
 			},
 			sinLength() {
 				return -100 * Math.sin(this.angle) + 250;
+			},
+			tgLength() {
+				return -100 * Math.tan(this.angle) + 250;
 			},
 		},
 		methods: {
