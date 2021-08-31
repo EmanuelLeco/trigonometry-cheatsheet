@@ -1,11 +1,12 @@
 <template>
-	<h1>Basic project dir</h1>
+	<unit-circle />
 </template>
 
 <script>
+	import UnitCircle from './components/UnitCircle.vue';
 	export default {
 		name: 'App',
-		components: {},
+		components: { UnitCircle },
 	};
 </script>
 
@@ -18,5 +19,14 @@
 
 		--fg: #324d7e;
 		--bg: #1a263d;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: var(--bg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 </style>
