@@ -12,8 +12,8 @@
 
 <style>
 	:root {
-		--sin: #3cc386;
-		--cos: #433cc3;
+		--sin: #6dff79;
+		--cos: #6af8d9;
 		--tg: #c33c79;
 		--cotg: #bcc33c;
 
