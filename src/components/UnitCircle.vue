@@ -9,7 +9,12 @@
 	>
 		<circle cx="250" cy="250" r="100" />
 		<line x1="0" y1="250" x2="500" y2="250" />
+
+		<!-- __ SIN __ -->
 		<line x1="250" y1="0" x2="250" y2="500" />
+		<line id="sin" x1="250" y1="250" x2="250" :y2="sinLength" />
+		<!-- __ __ -->
+
 		<!-- -- angle line -- -->
 		<line x1="250" y1="250" :x2="endOfLine.x" :y2="endOfLine.y" />
 		<!-- -- -- -->
@@ -54,6 +59,15 @@
 
 				return { x: x, y: y };
 			},
+
+			angle() {
+				let baseAng = -Math.atan2(this.b, this.a);
+				return baseAng < 0 ? baseAng + 2 * Math.PI : baseAng;
+			},
+
+			sinLength() {
+				return -100 * Math.sin(this.angle) + 250;
+			},
 		},
 		methods: {
 			getPosition(e) {
@@ -85,5 +99,28 @@
 
 	rect {
 		opacity: 0;
+	}
+
+	#cos,
+	#sin,
+	#tg,
+	#cotg {
+		stroke-width: 6px;
+	}
+
+	#cos {
+		stroke: var(--sin);
+	}
+
+	#sin {
+		stroke: var(--cos);
+	}
+
+	#tg {
+		stroke: var(--tg);
+	}
+
+	#cotg {
+		stroke: var(--cotg);
 	}
 </style>
