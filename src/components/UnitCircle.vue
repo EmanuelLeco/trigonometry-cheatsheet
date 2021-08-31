@@ -24,6 +24,11 @@
 		<line id="tg" x1="350" y1="250" x2="350" :y2="tgLength" />
 		<!-- --------- -->
 
+		<!-- __ COTG __ -->
+		<line x1="0" y1="150" x2="500" y2="150" />
+		<line id="cotg" x1="250" y1="150" :x2="cotgLength" y2="150" />
+		<!-- --------- -->
+
 		<!-- -- angle line -- -->
 		<line x1="250" y1="250" :x2="endOfLine.x" :y2="endOfLine.y" />
 		<!-- ---------------- -->
@@ -82,6 +87,9 @@
 			},
 			tgLength() {
 				return -100 * Math.tan(this.angle) + 250;
+			},
+			cotgLength() {
+				return 100 * (1 / Math.tan(this.angle)) + 250;
 			},
 		},
 		methods: {
